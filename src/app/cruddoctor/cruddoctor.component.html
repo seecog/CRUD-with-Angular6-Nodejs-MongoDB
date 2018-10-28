@@ -1,0 +1,32 @@
+<p>
+  List OF Doctors
+</p>
+
+<br><br>
+<p>
+  Doctor Name : <input [(ngModel)] = "doctor.Name"> {{doctor.Name}} <br><br>
+  Doctor Age : <input [(ngModel)] = "doctor.Age"><br><br>
+  Speciality : <input [(ngModel)] = "doctor.Speciality"><br><br>
+  Mobile : <input [(ngModel)] = "doctor.Mobile"><br><br>
+  Email : <input [(ngModel)] = "doctor.Email"><br><br>
+  <button (click) = "addDoctor()">Add Doctor</button>
+</p>
+
+<br><br>
+<table>
+<th>Name</th>
+<th>Age</th>
+<th>Speciality</th>
+<th>Mobile</th>
+<th>Email</th>
+<th>Action</th>
+<tr *ngFor = "let x of doctors; let i = index">
+  <td>{{i+1}}</td>
+<td>{{x.Name}}</td>
+<td>{{x.Age}}</td>
+<td>{{x.Speciality}}</td>
+<td>{{x.Mobile}}</td>
+<td>{{x.Email}}</td>
+<td><button (click) = "deleteDoctor(i)">Delete Doctor</button></td>
+</tr>
+</table>

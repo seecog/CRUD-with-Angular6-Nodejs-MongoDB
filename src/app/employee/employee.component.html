@@ -1,0 +1,39 @@
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Name : </label>
+    <input class="form-control" [(ngModel)]="emp.name">
+  </div>
+  <div class="form-group">
+    <label>Age : </label>
+    <input class="form-control" [(ngModel)]="emp.age">
+  </div>
+  <div class="form-group">
+    <label>salary : </label>
+    <input class="form-control" [(ngModel)]="emp.salary">
+  </div>
+  <div class="form-group">
+    <button *ngIf="!btn_stt" class="btn btn-primary" (click)="saveEmployee()">Save</button>
+    <button *ngIf="btn_stt" class="btn btn-primary" (click)="updateEmployee()">Update</button>
+  
+  </div>
+</div>
+<hr>
+
+<div class="col-lg-12">
+
+<table class="table">
+<th>Name</th><th>Age</th><th>Salary</th><th>Action</th>
+<tr *ngFor="let x of emps">
+  <td>{{x.name}}</td>
+  <td>{{x.age}}</td>
+  <td>{{x.salary}}</td>
+  <td>
+    <button class="btn btn-danger" (click)="delEmployee(x._id)">Delete</button> 
+  <button class="btn btn-primary" (click)="editEmployee(x)">Edit</button>
+  </td>
+</tr>
+
+</table>
+
+
+</div>
